@@ -1,0 +1,11 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+@import 'components/color'; // Custom color settings go here
+$primary-color: color("teal", "lighten-1");
+$secondary-color: color("blue", "lighten-1");
+// Materialize styles
+@import "materialize"; // ember-cli-materialize styles
+@import 'ember-cli-materialize';
+
+// import custom files
+@import 'app/styles/default.scss';

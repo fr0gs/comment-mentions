@@ -1,0 +1,14 @@
+{{#md-card title="Enter a comment please" id="comment-card"}}
+    {{#md-card-content}}
+        <div class="row">
+            {{textarea id="textarea-autocomplete" value=value label=label}}
+            <label id="textarea-label-{{label}}">{{label}}</label>
+        </div>
+    {{/md-card-content}}
+    {{#md-card-action}}
+        <div class="default-actions">
+            {{md-btn text='Save' isDisabled=disabledSaveButton disabled=disabledSaveButton action='save'}} 
+            {{md-btn text='Cancel' isDisabled=disabledCancelButton disabled=disabledCancelButton action='cancel'}}
+        </div>
+    {{/md-card-action}}
+{{/md-card}}
