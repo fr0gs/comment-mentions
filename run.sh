@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker run --rm --name comment_mentions \
-            -v "$PWD/nginx.conf":/etc/nginx/conf.d/app.conf \
+docker run -t --rm --name comment_mentions \
+            -v $PWD/nginx:/etc/nginx/conf.d/ \
             -p 80:80 comment-mentions

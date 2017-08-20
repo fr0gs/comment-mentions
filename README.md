@@ -9,7 +9,7 @@ If you have installed the programs in the list:
 * `npm install`
 * `bower install`
 
-Alternatively, if you have docker installed and don't want to install npm, bower & ember:
+Alternatively, if you have docker installed and don't want to install npm, bower & ember I created a docker image:
 
 ```
 $ docker build -t comment-mentions .
@@ -20,6 +20,7 @@ $ docker build -t comment-mentions .
 * To run locally type `npm start` and visit `http://localhost:4200`
 * To run the docker image:
   * `sh ./run.sh`
+  * visit `http://localhost`
 
 ## Considerations 
 
@@ -41,6 +42,9 @@ $ docker build -t comment-mentions .
 * Per each mention the whole users list is fetched from the backend and filtered on the client side. This is very bad if the list is huge, and bad in general. Ideally the call would be a query to an ElasticSearch or Solr instance and the already filtered set of users would be retrieved.
 
 ## Files to look
+
+Even with no prior experience with ember, most of the logic is in the **comment-mentions** component.
+
   * app/mixins/resize-textarea.js: mixin to automatically resize comment textarea to fit the text.
 
   * app/templates/application.hbs: main template that renders a navbar & `comment-mentions` component.
