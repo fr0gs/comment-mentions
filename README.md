@@ -19,8 +19,12 @@ $ docker build -t comment-mentions .
 
 * To run locally type `npm start` and visit `http://localhost:4200`
 * To run the docker image:
-  * `sh ./run.sh`
+  * `sh ./run.sh`. (If it does not run please check the name of the built image is **comment-mentions**)
   * visit `http://localhost`
+
+## Tests
+
+Run `npm run test-serve`, npm test only will fail the acceptance tests and you won't have the chance of seeing the interaction. Qunit is the used test runner.
 
 ## Considerations 
 
@@ -60,6 +64,10 @@ Even with no prior experience with ember, most of the logic is in the **comment-
     * models/user.js: the fake model describing user attributes.
     * scenarios/default.js: will load the fixtures into memory.
     * config.js: configuration fake endpoint.
+
+  * tests/
+    * acceptance/users-list-test.js: real world interaction with the component.
+    * integration/components/comment-mentions.js: rendering of the component
 
 
 ## Browser support
