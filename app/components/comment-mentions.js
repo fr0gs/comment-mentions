@@ -28,7 +28,7 @@ export default Ember.Component.extend(ResizeTextareaMixin, {
                         callback(matched);
                     })
                     .fail((err) => {
-                        console.error("Call to API failed");
+                        throw new Error("Call to API failed");
                     });
                 },
                 // html template to return when there is a hit

@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { visit, click, find, fillIn, waitUntil, currentURL, andThen } from 'ember-native-dom-helpers';
 
 moduleForComponent('comment-mentions', 'Integration | Component | comment mentions', {
   integration: true
@@ -12,14 +13,14 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{comment-mentions}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('#textarea-autocomplete').text().trim(), '');
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#comment-mentions}}
-      template block text
-    {{/comment-mentions}}
-  `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+test('it successfully inserts some text in the textbox', function(assert) {
+  this.render(hbs`{{comment-mentions}}`);  
+
+  fillIn('#textarea-autocomplete', 'textishere').then(() => {
+    assert.equal(this.$('#textarea-autocomplete').val().trim(), 'textishere');
+  });
 });
